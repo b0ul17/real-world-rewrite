@@ -122,3 +122,20 @@ layout: center
 <BoulitCallout tone="danger" class="mt-4">
   Communicate risk before it becomes a missed deadline.
 </BoulitCallout>
+
+---
+layout: center
+---
+
+# Notes worth keeping
+
+<div class="flex gap-10 mt-12">
+  <BoulitPaper>
+    <h2>Understand first.</h2>
+    <p>Document how the current product behaves before you rewrite it.</p>
+  </BoulitPaper>
+  <BoulitPaper>
+    <h2>Share the risk.</h2>
+    <p>Keep scope, priorities, and expectations in the conversation.</p>
+  </BoulitPaper>
+</div>

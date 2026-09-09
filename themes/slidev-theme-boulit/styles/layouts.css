@@ -153,3 +153,10 @@
 .slidev-layout.two-columns .col-right h1 {
   font-size: 2.15rem;
 }
+
+.slidev-layout.two-columns .col-right:has(> .boulit-paper) {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}

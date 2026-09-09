@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Patrick Hand";
+  src: url("./fonts/PatrickHand-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --boulit-accent: #f45100;
   --boulit-accent-strong: #bd3c00;

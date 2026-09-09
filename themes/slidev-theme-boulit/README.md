@@ -46,7 +46,53 @@ Slidev's built-in layouts such as `default`, `center`, `two-cols`, `image-left`,
 
 The `two-cols` layout vertically aligns both columns and places the right-hand content on a bordered panel. Set `layoutClass: gap-12` in the slide frontmatter to separate the columns. Cover slides also accept a `background` image with a palette-aware overlay for legibility.
 
+Wrap content in `<BoulitPaper>` for crumpled, ruled off-white paper, a folded corner, a slight tilt, and textured black tape. Each instance generates independent crease counts, positions, angles, lengths, and widths rather than perturbing a shared fold pattern. Scratches, fine wrinkles, and lighting also vary behind the content without distorting text or diagrams. Text uses the bundled Patrick Hand font. The component works in any layout, and multiple notes can share a slide. In the right column of `two-cols`, it replaces the standard panel styling automatically.
+
+```md
+<BoulitPaper>
+
+## Remember
+
+Document the behavior before rewriting it.
+
+</BoulitPaper>
+```
+
+Patterns remain stable while a component is mounted, including during click reveals. A fresh mount or page reload generates a new pattern. To preserve a particular pattern across reloads and exports, use a fixed numeric seed, for example `<BoulitPaper :seed="42">...</BoulitPaper>`. Identical seeds produce identical textures; use different seeds for different notes.
+
+Mermaid diagrams have their own font settings. For a handwritten diagram on the paper, add configuration inside its Mermaid fence:
+
+````md
+<BoulitPaper>
+
+```mermaid
+---
+config:
+  look: handDrawn
+  handDrawnSeed: 42
+  fontFamily: Patrick Hand
+  themeVariables:
+    fontFamily: Patrick Hand
+    fontSize: 22px
+    primaryColor: '#fffef8'
+    primaryTextColor: '#242b30'
+    primaryBorderColor: '#242b30'
+    mainBkg: '#fffef8'
+    nodeBorder: '#242b30'
+    lineColor: '#242b30'
+---
+flowchart TD
+    A[Laravel] --> B[Blade pages]
+```
+
+</BoulitPaper>
+````
+
+The fixed seed keeps the sketch consistent between renders. The font is served locally and loaded before Mermaid measures its labels, so the lettering does not depend on installed fonts or a font CDN.
+
 ## Components
+
+Reusable implementations live in `components/`, including `BoulitPaper.vue` and `BoulitProgress.vue`. The root `slide-top.vue` is only the Slidev-required entry point that renders `BoulitProgress` automatically on each slide; do not add a second progress instance to slide content.
 
 ```md
 <BoulitBadge>TypeScript</BoulitBadge>
@@ -116,3 +162,5 @@ From this repository's root, `npm run theme:dev` opens the component and layout 
 ## License
 
 MIT
+
+The bundled Patrick Hand font is by Patrick Wagesreiter and distributed under the SIL Open Font License 1.1; see `styles/fonts/OFL-PatrickHand.txt`.

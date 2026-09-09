@@ -75,13 +75,32 @@ layoutClass: gap-12
 
 ::right::
 
+<BoulitPaper>
+
 ```mermaid
+---
+config:
+  look: handDrawn
+  handDrawnSeed: 42
+  fontFamily: Patrick Hand
+  themeVariables:
+    fontFamily: Patrick Hand
+    fontSize: 22px
+    primaryColor: '#fffef8'
+    primaryTextColor: '#242b30'
+    primaryBorderColor: '#242b30'
+    mainBkg: '#fffef8'
+    nodeBorder: '#242b30'
+    lineColor: '#242b30'
+---
 flowchart TD
     A[Laravel] --> B[Blade-rendered pages]
     A --> C[Blade page]
     C --> D[Vue 2 application]
     D --> E[Vue routing]
 ```
+
+</BoulitPaper>
 
 <!--
 Let's start with the application we already had.
@@ -246,13 +265,36 @@ layoutClass: gap-16
 
 ::right::
 
+<BoulitPaper>
+
 ```mermaid
+---
+config:
+  look: handDrawn
+  handDrawnSeed: 42
+  fontFamily: Patrick Hand
+  flowchart:
+    padding: 12
+    rankSpacing: 18
+    wrappingWidth: 260
+  themeVariables:
+    fontFamily: Patrick Hand
+    fontSize: 22px
+    primaryColor: '#fffef8'
+    primaryTextColor: '#242b30'
+    primaryBorderColor: '#242b30'
+    mainBkg: '#fffef8'
+    nodeBorder: '#242b30'
+    lineColor: '#242b30'
+---
 flowchart TD
     A[New engineer] --> B[Learn the product]
     B --> C[Understand business logic]
     C --> D[Knowledge transfer]
     D --> E[Productive contribution]
 ```
+
+</BoulitPaper>
 
 <!--
 At some point another question came up. If two engineers need around a year, what happens if we add more engineers? Can we make the rewrite finish significantly faster?
@@ -337,13 +379,36 @@ layoutClass: gap-16
 
 ::right::
 
+<BoulitPaper>
+
 ```mermaid
+---
+config:
+  look: handDrawn
+  handDrawnSeed: 42
+  fontFamily: Patrick Hand
+  flowchart:
+    padding: 12
+    rankSpacing: 18
+    wrappingWidth: 260
+  themeVariables:
+    fontFamily: Patrick Hand
+    fontSize: 22px
+    primaryColor: '#fffef8'
+    primaryTextColor: '#242b30'
+    primaryBorderColor: '#242b30'
+    mainBkg: '#fffef8'
+    nodeBorder: '#242b30'
+    lineColor: '#242b30'
+---
 flowchart TD
     A[Application] --> B[Dependency]
     B --> C[Dependency changes]
     C --> D[Breaking change]
     D --> E[Rework]
 ```
+
+</BoulitPaper>
 
 <!--
 One challenge was that some of the things we depended on during the rewrite were still evolving.
