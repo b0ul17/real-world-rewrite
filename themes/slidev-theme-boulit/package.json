@@ -1,0 +1,40 @@
+{
+  "name": "slidev-theme-boulit",
+  "version": "0.1.0",
+  "description": "A focused ice-light engineering-conference theme for Slidev",
+  "author": "Andreas Panopoulos",
+  "license": "MIT",
+  "keywords": [
+    "slidev-theme",
+    "slidev",
+    "presentation",
+    "conference"
+  ],
+  "files": [
+    "components",
+    "layouts",
+    "setup",
+    "styles",
+    "example.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "slidev": ">=0.48.0"
+  },
+  "dependencies": {
+    "@slidev/types": "^52.0.0"
+  },
+  "slidev": {
+    "colorSchema": "light",
+    "defaults": {
+      "transition": "slide-left",
+      "colorSchema": "light",
+      "fonts": {
+        "sans": "Avenir Next,Inter",
+        "mono": "SFMono-Regular,Menlo",
+        "local": "Avenir Next"
+      }
+    }
+  }
+}

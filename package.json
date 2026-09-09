@@ -1,0 +1,17 @@
+{
+  "name": "rewriting-hybrid-laravel-vue2-to-nuxt3-talk",
+  "private": true,
+  "scripts": {
+    "dev": "slidev slides.md --open",
+    "build": "slidev build slides.md",
+    "export": "slidev export slides.md",
+    "theme:dev": "slidev themes/slidev-theme-boulit/example.md --open",
+    "theme:build": "slidev build themes/slidev-theme-boulit/example.md",
+    "theme:pack": "npm pack ./themes/slidev-theme-boulit"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^52.19.1",
+    "playwright-chromium": "^1.63.0",
+    "slidev-theme-boulit": "file:themes/slidev-theme-boulit"
+  }
+}
