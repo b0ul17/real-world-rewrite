@@ -6,24 +6,6 @@
   text-align: left;
 }
 
-.slidev-layout.cover::after,
-.slidev-layout.section::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  right: -10rem;
-  bottom: -16rem;
-  width: 36rem;
-  height: 36rem;
-  border: 1px solid var(--boulit-accent);
-  border-radius: 50%;
-  box-shadow: 0 0 0 3rem var(--boulit-accent-soft),
-    0 0 0 calc(3rem + 1px) var(--boulit-accent),
-    0 0 0 6rem var(--boulit-accent-soft);
-  opacity: 0.22;
-  pointer-events: none;
-}
-
 .slidev-layout.cover > div {
   max-width: 49rem;
 }

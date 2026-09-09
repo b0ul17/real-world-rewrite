@@ -19,6 +19,7 @@
   --boulit-ink: #242b30;
   --boulit-line: #deddd7;
   --boulit-grid-line: #f0efeb;
+  --boulit-doodle-opacity: 0.5;
   --boulit-muted: #626761;
   --boulit-radius: 0.85rem;
   --boulit-shadow: 0 0.2rem 0.3rem rgba(36, 43, 48, 0.02),
@@ -54,7 +55,6 @@
   --slidev-code-padding: 1rem;
   --slidev-code-radius: var(--boulit-radius);
   position: relative;
-  isolation: isolate;
   overflow: hidden;
   padding: 3rem 3.75rem;
   background: var(--boulit-surface);
@@ -65,16 +65,10 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.slidev-layout::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background-image:
-    linear-gradient(var(--boulit-grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--boulit-grid-line) 1px, transparent 1px);
-  background-size: 2.5rem 2.5rem;
-  pointer-events: none;
+/* Keep content above decorative layers without raising the slide background. */
+:where(.slidev-layout > *) {
+  position: relative;
+  z-index: 1;
 }
 
 .slidev-layout h1 {

@@ -1,6 +1,6 @@
 # slidev-theme-boulit
 
-A warm-paper, high-contrast Slidev theme for story-driven technical conference talks. Charcoal typography, vivid-orange accents, a subtle square grid, quiet cards, and a fine editorial rule keep the focus on the story.
+A warm-paper, high-contrast Slidev theme for story-driven technical conference talks. Charcoal typography, vivid-orange accents, subtle square grids, optional hand-drawn doodles, quiet cards, and a fine editorial rule keep the focus on the story.
 
 The theme is intentionally light-only, including code blocks and diagrams. Layouts target Slidev's default 16:9 canvas and scale with the presentation.
 
@@ -36,7 +36,7 @@ npm install --save-dev slidev-theme-boulit
 
 ## Layouts
 
-- `cover` — wide, left-aligned title with subtle concentric rings and an optional `.cover-mark`
+- `cover` — wide, left-aligned title with an optional `.cover-mark`
 - `section` — centered chapter divider on a soft accent wash
 - `statement` — large, centered takeaway with a quiet accent gradient
 - `fact` — oversized metric
@@ -92,7 +92,7 @@ The fixed seed keeps the sketch consistent between renders. The font is served l
 
 ## Components
 
-Reusable implementations live in `components/`, including `BoulitPaper.vue` and `BoulitProgress.vue`. The root `slide-top.vue` is only the Slidev-required entry point that renders `BoulitProgress` automatically on each slide; do not add a second progress instance to slide content.
+Reusable implementations live in `components/`, including `BoulitPaper.vue`, `BoulitDoodles.vue`, `BoulitGrid.vue`, and `BoulitProgress.vue`. The root `slide-top.vue` is only the Slidev-required entry point that selects the background and renders progress automatically on each slide; do not add duplicate instances to slide content.
 
 ```md
 <BoulitBadge>TypeScript</BoulitBadge>
@@ -130,6 +130,7 @@ Override the palette in a presentation-level `style.css`:
   --boulit-ink: #242b30;
   --boulit-line: #deddd7;
   --boulit-grid-line: #f0efeb;
+  --boulit-doodle-opacity: 0.5;
   --boulit-muted: #626761;
   --boulit-radius: 0.85rem;
 }
@@ -137,7 +138,20 @@ Override the palette in a presentation-level `style.css`:
 
 Typography and elevation can also be customized with `--boulit-font-sans`, `--boulit-font-mono`, and `--boulit-shadow`. The existing `--andreas-*` aliases are retained for compatibility. When changing the palette, keep text colors readable against both the surface and soft accent colors.
 
-The background grid uses 2.5rem squares across layouts, behind slide content. Set `--boulit-grid-line: transparent` to hide it. The default grid color maintains the orange palette's contrast even at line intersections.
+Slides use a subtle 2.5rem square grid by default. Set `--boulit-grid-line: transparent` to hide it. To replace the grid with doodles on an individual slide, opt in through that slide's frontmatter:
+
+```yaml
+---
+layout: cover
+doodles: true
+---
+```
+
+For a plain background without decorative patterns, use `backgroundPattern: none` in a slide's frontmatter. This explicit setting takes precedence over `doodles: true` and leaves the progress bar visible.
+
+The main talk uses a plain background on its opening slide, doodles on the introduction and thank-you slides, and the square grid on all technical and lessons slides. All backgrounds remain behind the content, including taped-paper diagrams.
+
+When enabled, decorative arrows, stars, squiggles, coding symbols, ice cream cones, pizza slices, lollipops, unicorns, rainbows, ducks, music notes, photography cameras, film strips, rolls of film, Minnie Mouse and Stitch heads, rocking horses, and a cowboy-hatted tractor driver cover the whole canvas with randomized, staggered placement. The default 16:9 canvas displays 60 doodles, with density adapting to other canvas sizes. Their seeded composition stays consistent across navigation, previews, and exports. Pale neutral and peach strokes sit above the slide background but below the content; text, cards, and diagrams remain on top. Doodles ignore pointer events and are hidden from assistive technology. Set `--boulit-doodle-opacity: 0` to hide them, or lower the default `0.5` to soften them further.
 
 The orange palette separates emphasis from readable small text:
 

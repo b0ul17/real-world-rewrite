@@ -1,15 +1,7 @@
-export function createPaperTexture(seed: number): string {
-  if (!Number.isFinite(seed))
-    throw new TypeError('Paper texture seed must be a finite number')
+import { createRandom } from './random'
 
-  let state = seed >>> 0
-  const random = (min: number, max: number) => {
-    // Seeded variation keeps a chosen paper pattern reproducible.
-    state = (state + 0x6D2B79F5) >>> 0
-    let value = Math.imul(state ^ (state >>> 15), state | 1)
-    value ^= value + Math.imul(value ^ (value >>> 7), value | 61)
-    return Math.round(min + (((value ^ (value >>> 14)) >>> 0) / 4294967296) * (max - min))
-  }
+export function createPaperTexture(seed: number): string {
+  const random = createRandom(seed)
 
   const gradients: string[] = []
   const folds: string[] = []

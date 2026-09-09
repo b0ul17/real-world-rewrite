@@ -1,6 +1,7 @@
 ---
 theme: ./
 layout: cover
+doodles: true
 title: Boulit Theme
 author: Andreas Panopoulos
 ---

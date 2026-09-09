@@ -1,7 +1,8 @@
 ---
 theme: boulit
 layout: cover
-title: Rewriting a Hybrid Laravel Blade and Vue 2 Application with Nuxt
+backgroundPattern: none
+title: The Not So Straight Story
 info: |
   A real-world engineering story about rewriting a hybrid Laravel and Vue application.
 author: Andreas Panopoulos
@@ -15,9 +16,9 @@ colorSchema: light
 
 <div class="eyebrow">A real-world rewrite</div>
 
-# Rewriting a Hybrid Laravel Blade<br>and Vue 2 Application<br>with <span class="accent">Nuxt</span>
+# The <span class="accent">Not So Straight</span> Story
 
-### What worked, what didn't, and what I would do differently
+### A story about rewriting an app from scratch
 
 <div class="speaker-line">
   Andreas Panopoulos · Staff Engineer @ HackTheBox
@@ -36,6 +37,7 @@ But this is not going to be only a talk about Vue, Nuxt, or changing frameworks.
 ---
 layout: center
 class: profile-slide
+doodles: true
 ---
 
 <div class="profile-card">
@@ -626,6 +628,7 @@ And communicate risk early.
 ---
 layout: statement
 transition: fade
+doodles: true
 ---
 
 # <span class="accent">Thank you!</span>
