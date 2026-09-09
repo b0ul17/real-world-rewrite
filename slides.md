@@ -2,7 +2,7 @@
 theme: boulit
 layout: cover
 backgroundPattern: none
-title: The Not So Straight Story
+title: The Not-So-Straight Story
 info: |
   A real-world engineering story about rewriting a hybrid Laravel and Vue application.
 author: Andreas Panopoulos
@@ -16,7 +16,7 @@ colorSchema: light
 
 <div class="eyebrow">A real-world rewrite</div>
 
-# The <span class="accent">Not So Straight</span> Story
+# The <span class="accent">Not-So-Straight</span> Story
 
 ### A story about rewriting an app from scratch
 
