@@ -1,14 +1,22 @@
 :root {
-  --boulit-accent: #f05a24;
-  --boulit-accent-strong: #b83b05;
-  --boulit-accent-soft: rgba(240, 90, 36, 0.13);
-  --boulit-amber: #ff8a00;
-  --boulit-danger: #d73737;
-  --boulit-surface: #f2f6f7;
-  --boulit-panel: rgba(255, 255, 255, 0.68);
-  --boulit-panel-strong: rgba(255, 255, 255, 0.9);
-  --boulit-line: rgba(45, 38, 35, 0.16);
-  --boulit-muted: #716964;
+  --boulit-accent: #f45100;
+  --boulit-accent-strong: #bd3c00;
+  --boulit-accent-soft: #fff0e5;
+  --boulit-amber: #ad640c;
+  --boulit-danger: #b33443;
+  --boulit-danger-soft: #faecee;
+  --boulit-surface: #f8f7f4;
+  --boulit-panel: #fdfcfb;
+  --boulit-panel-strong: #ffffff;
+  --boulit-ink: #242b30;
+  --boulit-line: #deddd7;
+  --boulit-grid-line: #f0efeb;
+  --boulit-muted: #626761;
+  --boulit-radius: 0.85rem;
+  --boulit-shadow: 0 0.2rem 0.3rem rgba(36, 43, 48, 0.02),
+    0 0.65rem 1.5rem rgba(36, 43, 48, 0.04);
+  --boulit-font-sans: "Avenir Next", Inter, ui-sans-serif, system-ui, sans-serif;
+  --boulit-font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   --andreas-accent: var(--boulit-accent);
   --andreas-accent-strong: var(--boulit-accent-strong);
   --andreas-accent-soft: var(--boulit-accent-soft);
@@ -32,97 +40,126 @@
 }
 
 .slidev-layout {
+  --slidev-theme-primary: var(--boulit-accent-strong);
+  --slidev-code-background: var(--boulit-panel-strong);
+  --slidev-code-foreground: var(--boulit-ink);
+  --slidev-code-padding: 1rem;
+  --slidev-code-radius: var(--boulit-radius);
   position: relative;
+  isolation: isolate;
   overflow: hidden;
-  padding: 3.4rem 4.2rem;
-  background:
-    linear-gradient(rgba(48, 58, 64, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(48, 58, 64, 0.04) 1px, transparent 1px),
-    var(--andreas-surface);
-  background-size: 2.5rem 2.5rem, 2.5rem 2.5rem, auto;
-  color: #241e1b;
-  font-family: "Avenir Next", Inter, ui-sans-serif, system-ui, sans-serif;
+  padding: 3rem 3.75rem;
+  background: var(--boulit-surface);
+  color: var(--boulit-ink);
+  font-family: var(--boulit-font-sans);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 .slidev-layout::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 4.2rem;
-  width: 5rem;
-  height: 0.28rem;
-  background: var(--andreas-accent);
+  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--boulit-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--boulit-grid-line) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+  pointer-events: none;
 }
 
 .slidev-layout h1 {
   margin-bottom: 1.5rem;
-  color: #241e1b;
-  font-size: 3rem;
+  color: var(--boulit-ink);
+  font-size: 2.65rem;
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1.12;
   letter-spacing: -0.045em;
+  text-wrap: balance;
 }
 
 .slidev-layout h2 {
-  color: var(--andreas-muted);
-  font-size: 1.75rem;
+  color: var(--boulit-muted);
+  font-size: 1.65rem;
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.025em;
 }
 
 .slidev-layout h3 {
-  color: var(--andreas-muted);
+  color: var(--boulit-muted);
+  font-weight: 500;
 }
 
 .slidev-layout a {
-  color: var(--andreas-accent-strong);
-  border-bottom-color: rgba(240, 90, 36, 0.5);
+  color: var(--boulit-accent-strong);
+  border-bottom-color: currentColor;
+  text-decoration: none;
+}
+
+.slidev-layout a:focus-visible {
+  outline: 2px solid var(--boulit-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 .slidev-layout strong {
-  color: #241e1b;
+  color: var(--boulit-ink);
+}
+
+.slidev-layout :not(pre) > code {
+  padding: 0.12em 0.35em;
+  border-radius: 0.3rem;
+  background: var(--boulit-accent-soft);
+  color: var(--boulit-accent-strong);
+  font-size: 0.88em;
 }
 
 .slidev-layout code {
-  color: #8f3f20;
+  font-family: var(--boulit-font-mono);
 }
 
 .slidev-layout blockquote {
-  border-left-color: var(--andreas-accent);
-  color: #241e1b;
+  padding: 0.9rem 1.25rem;
+  border-left: 3px solid var(--boulit-accent);
+  background: var(--boulit-accent-soft);
+  color: var(--boulit-ink);
+  font-size: 1.1rem;
+}
+
+.slidev-layout li::marker {
+  color: var(--boulit-accent-strong);
+}
+
+.slidev-layout th {
+  background: var(--boulit-accent-soft);
+  color: var(--boulit-accent-strong);
+  font-weight: 650;
+}
+
+.slidev-layout tr {
+  border-color: var(--boulit-line);
+}
+
+.slidev-layout tbody tr:nth-child(even) {
+  background: var(--boulit-panel);
 }
 
 .slidev-layout .slidev-code {
-  border: 1px solid var(--andreas-line);
-  border-radius: 0.75rem;
-  background: rgba(5, 9, 13, 0.8) !important;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--boulit-line);
+  box-shadow: var(--boulit-shadow);
 }
 
-.mermaid {
+.slidev-layout .mermaid {
   display: flex;
+  min-width: 0;
   justify-content: center;
 }
 
-.mermaid svg {
-  max-height: 23rem;
-}
-
-.mermaid .node rect,
-.mermaid .node polygon,
-.mermaid .node path {
-  fill: rgba(255, 255, 255, 0.82) !important;
-  stroke: rgba(240, 90, 36, 0.72) !important;
-  stroke-width: 1.4px !important;
-}
-
-.mermaid .nodeLabel,
-.mermaid .label {
-  color: #241e1b !important;
-  font-family: "Avenir Next", Inter, sans-serif !important;
-}
-
-.mermaid .edgePath path {
-  stroke: rgba(45, 38, 35, 0.55) !important;
+@media print {
+  .slidev-layout {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }

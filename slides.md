@@ -1,7 +1,7 @@
 ---
 theme: boulit
 layout: cover
-title: Rewriting a Hybrid Laravel Blade and Vue 2 Application with Nuxt 3
+title: Rewriting a Hybrid Laravel Blade and Vue 2 Application with Nuxt
 info: |
   A real-world engineering story about rewriting a hybrid Laravel and Vue application.
 author: Andreas Panopoulos
@@ -15,7 +15,7 @@ colorSchema: light
 
 <div class="eyebrow">A real-world rewrite</div>
 
-# Rewriting a Hybrid Laravel Blade<br>and Vue 2 Application<br>with <span class="accent">Nuxt 3</span>
+# Rewriting a Hybrid Laravel Blade<br>and Vue 2 Application<br>with <span class="accent">Nuxt</span>
 
 ### What worked, what didn't, and what I would do differently
 
@@ -28,7 +28,7 @@ Hello everyone.
 
 My name is Andreas, and I'm a Staff Engineer at HackTheBox.
 
-Today, I want to share a story about rewriting an entire application. We moved from a hybrid Laravel Blade and Vue 2 application to a new frontend built with Nuxt 3.
+Today, I want to share a story about rewriting an entire application. We moved from a hybrid Laravel Blade and Vue 2 application to a new frontend built with Nuxt.
 
 But this is not going to be only a talk about Vue, Nuxt, or changing frameworks. I want to talk about why we decided to rewrite the application, how we approached it, what didn't go as expected, why our original estimate wasn't enough, and, most importantly, what I would do differently if I had to do it again.
 -->
@@ -39,7 +39,9 @@ class: profile-slide
 ---
 
 <div class="profile-card">
-  <div class="monogram">AP</div>
+  <div class="monogram">
+    <img src="/andreas.jpg" alt="Andreas Panopoulos" width="128" height="128">
+  </div>
   <div>
     <div class="eyebrow">Hello, I'm</div>
     <div class="profile-name">Andreas</div>
@@ -129,7 +131,7 @@ class: text-center
 ---
 
 <div class="tech-row">
-  <span>Nuxt 3</span>
+  <span>Nuxt</span>
   <span>Vue 3</span>
   <span>TypeScript</span>
   <span>Pinia</span>
@@ -144,7 +146,7 @@ One thing that was very important to us was having an opinionated structure. We 
 
 That was one reason we started looking at Nuxt. Nuxt gave us that structure. We also liked the ecosystem around it. There were existing modules and solutions that we could use instead of solving everything ourselves.
 
-So we chose Nuxt 3. At the same time, we moved from JavaScript to TypeScript. The previous application contained JavaScript, Vue 2, and also some jQuery. For the new application, we wanted typing to give us an additional level of safety and make the data we were working with clearer.
+So we chose Nuxt. At the same time, we moved from JavaScript to TypeScript. The previous application contained JavaScript, Vue 2, and also some jQuery. For the new application, we wanted typing to give us an additional level of safety and make the data we were working with clearer.
 
 For state management, we moved from Vuex to Pinia. We followed the direction of the Vue ecosystem, and we liked how Pinia let us organise state into smaller, focused stores.
 
@@ -538,12 +540,10 @@ transition: fade
   <div class="accent">Communicate risk early.</div>
 </div>
 
-<div class="mt-16 text-xl opacity-70">Thank you</div>
-
 <!--
 When I look back at this rewrite, the technology was obviously an important part of it.
 
-We moved from a hybrid Laravel Blade and Vue 2 application to a Nuxt 3 application. We adopted Vue 3 and TypeScript. We changed how we handled state. We separated the frontend more clearly from the backend.
+We moved from a hybrid Laravel Blade and Vue 2 application to a Nuxt application. We adopted Vue 3 and TypeScript. We changed how we handled state. We separated the frontend more clearly from the backend.
 
 But after a year and a half, the lessons that stayed with me the most weren't really about Nuxt.
 
@@ -556,6 +556,26 @@ Understand before you rewrite.
 Document what people currently keep in their heads.
 
 And communicate risk early.
+-->
 
+---
+layout: statement
+transition: fade
+---
+
+# <span class="accent">Thank you!</span>
+
+<div class="social-links">
+  <a href="https://x.com/boulit" target="_blank" rel="noopener noreferrer" aria-label="X: @boulit (opens in a new tab)">
+    <span class="i-carbon-logo-x" aria-hidden="true"></span>
+    <span>@boulit</span>
+  </a>
+  <a href="https://www.linkedin.com/in/AndreasPanopoulos/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn: AndreasPanopoulos (opens in a new tab)">
+    <span class="i-carbon-logo-linkedin" aria-hidden="true"></span>
+    <span>AndreasPanopoulos</span>
+  </a>
+</div>
+
+<!--
 Thank you.
 -->

@@ -7,7 +7,7 @@ const props = defineProps<{
 
 const style = computed(() => props.background
   ? {
-      backgroundImage: `linear-gradient(#f2f6f7aa, #f2f6f7e6), url("${props.background}")`,
+      backgroundImage: `linear-gradient(color-mix(in srgb, var(--boulit-surface) 88%, transparent), color-mix(in srgb, var(--boulit-surface) 96%, transparent)), url("${props.background}")`,
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',

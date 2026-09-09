@@ -1,5 +1,5 @@
 {
-  "name": "rewriting-hybrid-laravel-vue2-to-nuxt3-talk",
+  "name": "rewriting-hybrid-laravel-vue2-to-nuxt-talk",
   "private": true,
   "scripts": {
     "dev": "slidev slides.md --open",

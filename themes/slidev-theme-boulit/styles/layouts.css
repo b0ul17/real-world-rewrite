@@ -2,27 +2,46 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 18rem;
+  padding-right: 5rem;
   text-align: left;
 }
 
-.slidev-layout.cover::before {
-  width: 7rem;
+.slidev-layout.cover::after,
+.slidev-layout.section::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -10rem;
+  bottom: -16rem;
+  width: 36rem;
+  height: 36rem;
+  border: 1px solid var(--boulit-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3rem var(--boulit-accent-soft),
+    0 0 0 calc(3rem + 1px) var(--boulit-accent),
+    0 0 0 6rem var(--boulit-accent-soft);
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.slidev-layout.cover > div {
+  max-width: 49rem;
 }
 
 .slidev-layout.cover h1 {
   position: relative;
   z-index: 1;
   margin: 1rem 0 1.35rem;
-  font-size: 3.45rem;
-  line-height: 1.04;
+  font-size: 3.15rem;
+  line-height: 1.1;
+  text-wrap: initial;
 }
 
 .slidev-layout.cover h3 {
   position: relative;
   z-index: 1;
-  max-width: 41rem;
-  font-size: 1.25rem;
+  max-width: 40rem;
+  font-size: 1.15rem;
   line-height: 1.45;
 }
 
@@ -30,6 +49,7 @@
   display: grid;
   place-items: center;
   text-align: center;
+  background: linear-gradient(135deg, var(--boulit-surface) 35%, var(--boulit-accent-soft));
 }
 
 .slidev-layout.section h1 {
@@ -37,15 +57,25 @@
   font-size: 4rem;
 }
 
+.slidev-layout.section h1::before {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 0.3rem;
+  margin: 0 auto 2rem;
+  background: var(--boulit-accent);
+}
+
 .slidev-layout.statement {
   display: grid;
   place-items: center;
   text-align: center;
+  background: linear-gradient(0deg, var(--boulit-accent-soft), var(--boulit-surface) 65%);
 }
 
 .slidev-layout.statement h1 {
   max-width: 52rem;
-  font-size: 3.8rem;
+  font-size: 3.6rem;
 }
 
 .slidev-layout.fact {
@@ -57,8 +87,16 @@
 .slidev-layout.fact h1 {
   margin: 0;
   color: var(--boulit-accent);
-  font-size: 7rem;
+  font-size: 8rem;
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: -0.07em;
   line-height: 1;
+}
+
+.slidev-layout.fact p {
+  margin-top: 1.75rem;
+  color: var(--boulit-muted);
+  font-size: 1.35rem;
 }
 
 .slidev-layout.quote {
@@ -70,6 +108,7 @@
   max-width: 48rem;
   font-size: 3rem;
   line-height: 1.25;
+  letter-spacing: -0.035em;
 }
 
 .slidev-layout.quote h1::before {
@@ -81,8 +120,36 @@
   line-height: 1;
 }
 
-.slidev-layout.two-cols .col-right {
+.slidev-layout.quote p {
+  margin-top: 2rem;
+  color: var(--boulit-muted);
+  font-size: 1rem;
+}
+
+.slidev-layout.center {
+  justify-content: stretch;
+}
+
+.slidev-layout.center > div,
+.slidev-layout.two-columns > div {
+  min-width: 0;
+}
+
+.slidev-layout.two-columns .col-left,
+.slidev-layout.two-columns .col-right {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.slidev-layout.two-columns .col-right {
+  padding: 1.5rem;
+  border: 1px solid var(--boulit-line);
+  border-radius: var(--boulit-radius);
+  background: var(--boulit-panel);
+  box-shadow: var(--boulit-shadow);
+}
+
+.slidev-layout.two-columns .col-right h1 {
+  font-size: 2.15rem;
 }

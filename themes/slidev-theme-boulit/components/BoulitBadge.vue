@@ -19,14 +19,16 @@ withDefaults(defineProps<{
   padding: 0.45rem 0.85rem;
   border: 1px solid var(--boulit-line);
   border-radius: 999px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--boulit-font-mono);
   font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.35;
 }
 
 .boulit-badge--accent {
-  border-color: rgba(240, 90, 36, 0.46);
+  border-color: color-mix(in srgb, var(--boulit-accent) 25%, var(--boulit-surface));
   background: var(--boulit-accent-soft);
-  color: #8f3f20;
+  color: var(--boulit-accent-strong);
 }
 
 .boulit-badge--neutral {
@@ -35,8 +37,8 @@ withDefaults(defineProps<{
 }
 
 .boulit-badge--danger {
-  border-color: rgba(255, 122, 133, 0.35);
-  background: rgba(255, 122, 133, 0.09);
-  color: #982f39;
+  border-color: color-mix(in srgb, var(--boulit-danger) 25%, var(--boulit-surface));
+  background: var(--boulit-danger-soft);
+  color: var(--boulit-danger);
 }
 </style>

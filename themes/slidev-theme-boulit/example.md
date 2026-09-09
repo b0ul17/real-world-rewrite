@@ -1,5 +1,6 @@
 ---
 theme: ./
+layout: cover
 title: Boulit Theme
 author: Andreas Panopoulos
 ---
@@ -26,6 +27,7 @@ layout: section
 <div class="flex gap-3 mb-12">
   <BoulitBadge>Vue</BoulitBadge>
   <BoulitBadge>TypeScript</BoulitBadge>
+  <BoulitBadge tone="neutral">In progress</BoulitBadge>
   <BoulitBadge tone="danger">Risk</BoulitBadge>
 </div>
 
@@ -59,3 +61,64 @@ layout: quote
 # Simplicity is prerequisite for reliability.
 
 Edsger W. Dijkstra
+
+---
+layout: two-cols
+layoutClass: gap-12
+---
+
+<div class="eyebrow">Architecture</div>
+
+# Give the story<br>a clear direction.
+
+## Keep the explanation close to the system it describes.
+
+::right::
+
+```mermaid
+flowchart TD
+    A[Nuxt application] --> B[API boundary]
+    B --> C[Laravel services]
+```
+
+---
+layout: two-cols
+layoutClass: gap-10
+---
+
+# Built for the details
+
+Use `computed()` for derived state. Let syntax highlighting carry the structure.
+
+```ts
+const completed = computed(() =>
+  tasks.value.filter(task => task.done),
+)
+```
+
+::right::
+
+| Layer | Responsibility |
+| --- | --- |
+| Pages | User journeys |
+| Components | Shared UI |
+| Composables | Reusable logic |
+
+---
+layout: center
+---
+
+# Clear signals, not more noise
+
+<div class="lesson-grid mt-8">
+  <div><strong>01</strong><span>Document the current behavior</span></div>
+  <div><strong>02</strong><span>Make the boundaries explicit</span></div>
+</div>
+
+<BoulitCallout class="mt-8">
+  Keep the next decision visible.
+</BoulitCallout>
+
+<BoulitCallout tone="danger" class="mt-4">
+  Communicate risk before it becomes a missed deadline.
+</BoulitCallout>

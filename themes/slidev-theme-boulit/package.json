@@ -1,7 +1,7 @@
 {
   "name": "slidev-theme-boulit",
   "version": "0.1.0",
-  "description": "A focused ice-light engineering-conference theme for Slidev",
+  "description": "A warm-paper editorial theme for technical conference talks in Slidev",
   "author": "Andreas Panopoulos",
   "license": "MIT",
   "keywords": [
@@ -15,6 +15,7 @@
     "layouts",
     "setup",
     "styles",
+    "slide-top.vue",
     "example.md",
     "README.md",
     "LICENSE"
