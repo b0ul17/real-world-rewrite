@@ -12,6 +12,7 @@ drawings:
 transition: slide-left
 mdc: true
 colorSchema: light
+favicon: /favicon.png
 ---
 
 <div class="eyebrow">A real-world rewrite</div>
