@@ -60,8 +60,8 @@ function resolveAssetUrl(url: string): string {
 <div class="interest-row">
   <span>Photography</span>
   <span>Music</span>
-  <span>Movies</span>
   <span>Books</span>
+   <span>Movies</span>
   <span>Time with family</span>
 </div>
 
@@ -204,8 +204,8 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    D[Nuxt] --> E[API]
-    E --> F[Laravel]
+    D[Laravel] --> E[API]
+    E --> F[Nuxt]
 ```
   </div>
 </div>
