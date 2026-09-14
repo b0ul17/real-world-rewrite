@@ -13,5 +13,9 @@
     "@slidev/cli": "^52.19.1",
     "playwright-chromium": "^1.63.0",
     "slidev-theme-boulit": "file:themes/slidev-theme-boulit"
+  },
+  "overrides": {
+    "dompurify": "^3.4.15",
+    "image-size": "^2.0.4"
   }
 }
