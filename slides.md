@@ -40,9 +40,15 @@ class: profile-slide
 doodles: true
 ---
 
+<script setup lang="ts">
+function resolveAssetUrl(url: string): string {
+  return url.startsWith('/') ? import.meta.env.BASE_URL + url.slice(1) : url
+}
+</script>
+
 <div class="profile-card">
   <div class="monogram">
-    <img src="/andreas.jpg" alt="Andreas Panopoulos" width="128" height="128">
+    <img :src="resolveAssetUrl('/andreas.jpg')" alt="Andreas Panopoulos" width="128" height="128">
   </div>
   <div>
     <div class="eyebrow">Hello, I'm</div>
@@ -54,6 +60,9 @@ doodles: true
 <div class="interest-row">
   <span>Photography</span>
   <span>Music</span>
+  <span>Movies</span>
+  <span>Books</span>
+  <span>Time with family</span>
 </div>
 
 <!--
