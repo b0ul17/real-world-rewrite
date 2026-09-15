@@ -1,14 +1,15 @@
 <template>
   <div class="boulit-quote">
-    <span class="boulit-quote__mark" aria-hidden="true">"</span>
+    <span class="boulit-quote__mark boulit-quote__mark--open" aria-hidden="true">&ldquo;</span>
     <p class="boulit-quote__text"><slot /></p>
+    <span class="boulit-quote__mark boulit-quote__mark--close" aria-hidden="true">&rdquo;</span>
   </div>
 </template>
 
 <style scoped>
 .boulit-quote {
   position: relative;
-  padding: 1.1rem 1.4rem 1.1rem 2.8rem;
+  padding: 1.1rem 2.6rem 1.1rem 2.8rem;
   border-left: 5px solid var(--boulit-accent);
   border-radius: 0 var(--boulit-radius) var(--boulit-radius) 0;
   background: var(--boulit-accent-soft);
@@ -17,8 +18,6 @@
 
 .boulit-quote__mark {
   position: absolute;
-  top: -0.3rem;
-  left: 0.45rem;
   font-size: 3.5rem;
   line-height: 1;
   font-family: Georgia, "Times New Roman", serif;
@@ -26,6 +25,16 @@
   opacity: 0.55;
   pointer-events: none;
   user-select: none;
+}
+
+.boulit-quote__mark--open {
+  top: -0.3rem;
+  left: 0.45rem;
+}
+
+.boulit-quote__mark--close {
+  right: 0.5rem;
+  bottom: -1.55rem;
 }
 
 .boulit-quote__text {

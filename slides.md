@@ -85,7 +85,7 @@ layoutClass: gap-12
 
 ## Two frontend worlds<br>inside the same product.
 
-<div v-click class="mt-8"><strong>"Architecture decisions make sense in the context in which they were made"</strong></div>
+<BoulitQuote v-click class="mt-8">Architecture decisions make sense in the context in which they were made</BoulitQuote>
 
 ::right::
 
