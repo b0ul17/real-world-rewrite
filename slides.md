@@ -71,7 +71,7 @@ Before we get into the technical story, a very quick introduction.
 
 I'm Andreas. I work as a Staff Engineer at HackTheBox.
 
-Outside engineering, I like photography, music, and cycling.
+Outside engineering, I like photography, music, books, movies and time with my family .
 
 That is all you need to know about me for today. Let's start with the application we already had, because understanding where we started is important to understanding why this became much more than a framework upgrade.
 -->
@@ -84,6 +84,8 @@ layoutClass: gap-12
 # Where we started
 
 ## Two frontend worlds<br>inside the same product.
+
+<div v-click class="mt-8"><strong>"Architecture decisions make sense in the context in which they were made"</strong></div>
 
 ::right::
 
@@ -125,7 +127,7 @@ So, essentially, we had two different worlds living inside the same product. We 
 
 I want to make something clear here: this architecture was not necessarily a bad decision. At that point in the life of the product, it helped us move forward and scale the platform.
 
-Architecture decisions usually make sense in the context in which they were made. The problem is that applications change, teams change, companies grow, and requirements change. Eventually, our needs started to become different.
+Architecture decisions make sense in the context in which they were made. The problem is that applications change, teams change, companies grow, and requirements change. Eventually, our needs started to become different.
 -->
 
 ---
@@ -274,6 +276,9 @@ layoutClass: gap-16
 # What if we add<br>another engineer?
 
 ## More engineers <span class="accent">≠</span><br>proportionally less time
+
+
+<BoulitQuote v-click class="mt-8">Putting two drivers in the front seat won't get the bus to its destination in half the time.</BoulitQuote>
 
 ::right::
 
@@ -642,6 +647,8 @@ doodles: true
 ---
 
 # <span class="accent">Thank you!</span>
+
+<QrCode value="https://b0ul17.github.io/the-not-so-straight-story/1" :width="160" :height="160" class="mx-auto mb-6" />
 
 <div class="social-links">
   <a href="https://x.com/boulit" target="_blank" rel="noopener noreferrer" aria-label="X: @boulit (opens in a new tab)">
